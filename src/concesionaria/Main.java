@@ -56,13 +56,27 @@ public class Main {
 					System.out.println("Vehículo que contiene en el modelo la letra 'Y': " + v.getMarca() + " " + v.getModelo() + " " + v.getFormat().format(v.getPrecio()));
 				}
 			}
+			
+			
+			System.out.println("=============================");
+			
+			
+			//Compara los vehículos por precio, de mayor a menor
+			Comparator<Vehiculo> comparador = Collections.reverseOrder();
+			Collections.sort(listaVehiculos, comparador);
+	
+			
+			//Muestra los vehículos ordenados
+			System.out.println("Vehículos ordenados por precio de mayor a menor:");
+			for(Vehiculo v : listaVehiculos) {
+				System.out.println(v.getMarca() + " " + v.getModelo());
+			}
+			
 		}
 		catch(Exception e) {
 		
 			System.out.println(e.getMessage());
 		}
 		
-		
-
 	}
 }

@@ -2,7 +2,8 @@ package concesionaria;
 
 import java.text.DecimalFormat;
 
-public abstract class Vehiculo {
+
+public abstract class Vehiculo implements Comparable<Vehiculo> {
 	
 	protected String marca;
 	protected String modelo;
@@ -31,5 +32,10 @@ public abstract class Vehiculo {
 	public DecimalFormat getFormat() {
 		return this.df;
 	}
+	
+    @Override
+    public int compareTo(Vehiculo v) {
+        return this.precio.compareTo(v.precio);
+    }
 
 }
