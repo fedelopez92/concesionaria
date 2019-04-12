@@ -2,14 +2,34 @@ package concesionaria;
 
 import java.text.DecimalFormat;
 
-public interface Vehiculo {
+public abstract class Vehiculo {
 	
-	public String getMarca();
+	protected String marca;
+	protected String modelo;
+	protected Double precio;
+	protected DecimalFormat df;
 	
-	public String getModelo();
+	public Vehiculo(String marca, String modelo, Double precio) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.precio = precio;
+		this.df = new DecimalFormat("$###,###.00");
+	}
+
+	public String getMarca() {
+		return this.marca;
+	}
 	
-	public Double getPrecio();
+	public String getModelo() {
+		return this.modelo;
+	}
 	
-	public DecimalFormat getFormat();
+	public Double getPrecio() {
+		return this.precio;
+	}
 	
+	public DecimalFormat getFormat() {
+		return this.df;
+	}
+
 }
